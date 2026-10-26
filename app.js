@@ -44,10 +44,13 @@ function criarChamado(cliente, assunto, prioridade) {
 
 }
 
-function encerrarChamado(chamado) {
-  // TODO 2:
-  // - Altere a propriedade 'status' do objeto recebido para "fechado".
-  // Observe que o objeto do array também deve ser alterado.
+function encerrarChamado(chamados, id, novoStatus) {
+  const chamado = chamados.find(item => item.id === id);
+
+  if (chamado) {
+    chamado.status = novoStatus
+  }
+
 }
 
 function contarChamados() {
@@ -62,3 +65,5 @@ function exibirChamado(chamado) {
 
 criarChamado("João", "Erro no login", "alta")
 contarChamados()
+encerrarChamado(chamados, 2, "fechado");
+console.log(chamados);

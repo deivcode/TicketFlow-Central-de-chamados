@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="TicketFlow — central de chamados para praticar JavaScript." />
+    <title>TicketFlow | Central de chamados</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <script src="ui.js" defer></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <a href="#inicio" class="brand" aria-label="TicketFlow — início">
+          <span class="brand-mark" aria-hidden="true">T<span class="brand-dot">.</span></span>
+          <span>ticket<span class="brand-light">flow</span></span>
+        </a>
+        <span class="topbar-pill"><span class="live-dot"></span> Laboratório de JavaScript</span>
+      </header>
+
+      <main id="inicio" class="main-content">
+        <section class="intro">
+          <div class="eyebrow">MEU PRIMEIRO SISTEMA</div>
+          <h1>Central de chamados<span class="title-accent">.</span></h1>
+          <p>Cadastre, acompanhe e encerre solicitações. A interface já está pronta — agora é sua vez de programar as funções que fazem tudo funcionar.</p>
+        </section>
+
+        <section class="stats" aria-label="Resumo dos chamados">
+          <div class="stat-card">
+            <div class="stat-icon stat-all" aria-hidden="true">≡</div>
+            <div><p class="stat-label">Total de chamados</p><strong id="total-chamados">0</strong></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon stat-open" aria-hidden="true">○</div>
+            <div><p class="stat-label">Em aberto</p><strong id="abertos-chamados">0</strong></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon stat-closed" aria-hidden="true">✓</div>
+            <div><p class="stat-label">Encerrados</p><strong id="fechados-chamados">0</strong></div>
+          </div>
+        </section>
+
+        <section class="workspace" aria-label="Área de trabalho">
+          <aside class="panel form-panel">
+            <div class="section-heading">
+              <div class="section-icon" aria-hidden="true">＋</div>
+              <div>
+                <h2>Novo chamado</h2>
+                <p>Preencha os dados da solicitação</p>
+              </div>
+            </div>
+
+            <form id="form-chamado" novalidate>
+              <div class="form-field">
+                <label for="cliente">Nome do cliente</label>
+                <input id="cliente" name="cliente" type="text" maxlength="60" required placeholder="Ex.: Ana Souza" autocomplete="off" />
+              </div>
+              <div class="form-field">
+                <label for="assunto">Assunto do chamado</label>
+                <textarea id="assunto" name="assunto" rows="4" maxlength="220" required placeholder="Descreva brevemente o problema..."></textarea>
+              </div>
+              <div class="form-field">
+                <label for="prioridade">Prioridade</label>
+                <select id="prioridade" name="prioridade">
+                  <option value="baixa">Baixa — pode aguardar</option>
+                  <option value="media" selected>Média — atenção normal</option>
+                  <option value="alta">Alta — precisa de atenção</option>
+                </select>
+              </div>
+              <button type="submit" class="primary-button">+ Cadastrar chamado</button>
+            </form>
+            <div class="study-tip"><span aria-hidden="true">✦</span><p><strong>Sua missão:</strong> fazer a função <code>criarChamado()</code> adicionar um objeto ao array no <code>app.js</code>.</p></div>
+          </aside>
+
+          <section class="panel tickets-panel" aria-label="Lista de chamados">
+            <div class="tickets-header">
+              <div>
+                <h2>Chamados registrados</h2>
+                <p>Solicitações da sua central</p>
+              </div>
+              <span class="list-count" id="contador-lista">0 registros</span>
+            </div>
+            <div id="aviso" class="notice" role="status" aria-live="polite" hidden></div>
+            <div id="lista-chamados" class="ticket-list" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <footer class="footer">
+          <span>TicketFlow v1.0 · Projeto de estudo</span>
+          <span>HTML + CSS + JavaScript, sem frameworks</span>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

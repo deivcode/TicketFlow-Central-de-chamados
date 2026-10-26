@@ -40,7 +40,6 @@ function criarChamado(cliente, assunto, prioridade) {
   // - Adicione esse objeto ao array 'chamados'.
   chamados.push(novoChamado)
   // Dica: o total de chamados pode ajudar a gerar um ID inicial.
-
   console.log(chamados)
 
 }
@@ -52,8 +51,8 @@ function encerrarChamado(chamado) {
 }
 
 function contarChamados() {
-  // TODO 3:
-  // - Retorne a quantidade de elementos do array 'chamados'.
+  const numeroChamados = chamados.length
+  console.log(numeroChamados)
 }
 
 function exibirChamado(chamado) {
@@ -62,3 +61,4 @@ function exibirChamado(chamado) {
 }
 
 criarChamado("João", "Erro no login", "alta")
+contarChamados()

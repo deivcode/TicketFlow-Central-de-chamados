@@ -58,12 +58,13 @@ function contarChamados() {
   console.log(numeroChamados)
 }
 
-function exibirChamado(chamado) {
-  // TODO 4 (opcional):
-  // - Exiba no console cliente, assunto, prioridade e status.
+function exibirChamado(chamados, id) {
+  const chamado = chamados.find(item => item.id === id)
+  console.log(chamado)
 }
 
 criarChamado("João", "Erro no login", "alta")
 contarChamados()
 encerrarChamado(chamados, 2, "fechado");
-console.log(chamados);
+
+exibirChamado(chamados, 1)

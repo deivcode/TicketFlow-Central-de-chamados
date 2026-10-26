@@ -23,8 +23,8 @@ Estou tentando resolver os problemas por conta própria e usar a IA principalmen
 - [x] Estrutura inicial do projeto
 - [x] Cadastro de chamados utilizando arrays e objetos
 - [ ] Exibição e consulta de chamados
-- [ ] Encerramento de chamados
-- [ ] Contagem de chamados
+- [x] Encerramento de chamados
+- [x] Contagem de chamados
 - [ ] Validações e tratamento de erros
 - [ ] Filtros por status e prioridade
 
